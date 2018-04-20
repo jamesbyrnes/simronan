@@ -12,7 +12,7 @@ dclient.on('ready', () => {
 dclient.on('message', (msg) => {
   if (msg.author.id === dclient.user.id) return;
 
-  if (msg.content === '<:ronan:422580945250549766> x') {
+  if (msg.content === '<:ronan:422580945250549766>') {
     getRandomLyric()
     .then((lyrics) => {
       msg.reply(lyrics);
