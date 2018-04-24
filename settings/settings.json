@@ -1,0 +1,9 @@
+{
+  "buildVersion": "dev",
+  "devChannels": ["bottest"],
+  "prodChannels": [],
+  "responseTable": {
+    "LYRIC_RANDOM": ["<:ronan:422580945250549766>", "/ronan"],
+    "BANTER_SWORDS": ["⚔"]
+  }
+}
