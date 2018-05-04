@@ -7,7 +7,6 @@ module.exports.messageHandler = (dclient, msg) => {
 
   if (msg.author.id === dclient.user.id) return;
   if (Object.keys(responseTable).indexOf(msg.content) < 0) return;
-  console.log(mainSettings.channels);
   if (mainSettings.channels.length > 0) {
     if (mainSettings.channels.indexOf(msg.channel.name) < 0) return;
   }
