@@ -1,7 +1,7 @@
-require('dotenv').config();
-
 const Discord = require('discord.js');
 const dclient = new Discord.Client();
+const settings = require('./settings');
+const mainSettings = settings.getSettings();
 
 const { messageHandler } = require('./handlers/messageHandler');
 
@@ -13,4 +13,4 @@ dclient.on('message', (msg) => {
   messageHandler(dclient, msg);
 });
 
-dclient.login(process.env.DISCORD_CLIENT_TOKEN);
+dclient.login(mainSettings.discordToken);

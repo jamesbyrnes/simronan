@@ -1,4 +1,5 @@
 {
+  "discordToken": "MzgxODQ2NzY1ODU2NDg5NDky.Db7psw.mOrBOhDQIb2yvktC06o7OMn22ls",
   "buildVersion": "dev",
   "devChannels": ["bottest"],
   "prodChannels": [],
