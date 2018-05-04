@@ -1,8 +1,6 @@
 {
-  "discordToken": "MzgxODQ2NzY1ODU2NDg5NDky.Db7psw.mOrBOhDQIb2yvktC06o7OMn22ls",
-  "buildVersion": "dev",
-  "devChannels": ["bottest"],
-  "prodChannels": [],
+  "token": "MzgxODQ2NzY1ODU2NDg5NDky.Db7psw.mOrBOhDQIb2yvktC06o7OMn22ls",
+  "channels": ["bottest"],
   "responseTable": {
     "LYRIC_RANDOM": ["<:ronan:422580945250549766>", "/ronan"],
     "BANTER_SWORDS": ["⚔"]

@@ -13,4 +13,4 @@ dclient.on('message', (msg) => {
   messageHandler(dclient, msg);
 });
 
-dclient.login(mainSettings.discordToken);
+dclient.login(mainSettings.token);
