@@ -7,7 +7,11 @@ module.exports.messageHandler = (dclient, msg) => {
 
   if (msg.author.id === dclient.user.id) return;
   if (Object.keys(responseTable).indexOf(msg.content) < 0) return;
-  if (mainSettings.buildVersion === "dev" && mainSettings.devChannels.indexOf(msg.channel.name) < 0) return;
+  if (mainSettings.buildVersion === "dev") {
+    if (mainSettings.devChannels !== [] && mainSettings.devChannels.indexOf(msg.channel.name) < 0) return;
+  } else {
+    if (mainSettings.prodChannels !== [] && mainSettings.prodChannels.indexOf(msg.channel.name) < 0) return;
+  }
 
   const trigger = responseTable[msg.content];
 
