@@ -2,7 +2,7 @@ const sqlite = require('sqlite3').verbose();
 const db = new sqlite.Database('./db/lyrics.db');
 
 module.exports.getRandomLyric = () => {
-  const QUERY_LYRIC_RANDOM = `SELECT * FROM lyrics ORDER BY RANDOM() LIMIT 1;`
+  const QUERY_LYRIC_RANDOM = `SELECT * FROM lyrics ORDER BY RANDOM() LIMIT 1;`;
 
   return new Promise ((resolve, reject) => {
     db.get(QUERY_LYRIC_RANDOM, (err, row) => {
@@ -15,6 +15,22 @@ module.exports.getRandomLyric = () => {
         res.push(lyricArr[firstLine + i]);
       }
       resolve(res.join('\n'));
+    });
+  });
+};
+
+module.exports.getAllLyrics = () => {
+  const QUERY_LYRIC_ALL = `SELECT * FROM lyrics;`;
+
+  return new Promise ((resolve, reject) => {
+    db.all(QUERY_LYRIC_ALL, (err, rows) => {
+      if (err) reject(err);
+
+      resolve(
+        rows.map((row) => {
+          return row["lyrics"];
+        })
+      );
     });
   });
 };

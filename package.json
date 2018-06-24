@@ -1,6 +1,6 @@
 {
-  "name": "ronanbot",
-  "version": "0.0.1",
+  "name": "simronan",
+  "version": "0.2.0",
   "description": "SWORDS",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,10 @@
   "dependencies": {
     "discord.js": "^11.3.2",
     "dotenv": "^5.0.1",
-    "sqlite3": "^4.0.0"
+    "markovchain": "^1.0.2",
+    "sqlite3": "^4.0.1"
   },
   "devDependencies": {
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.5"
   }
 }

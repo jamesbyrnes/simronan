@@ -1,5 +1,6 @@
 const settings = require('../settings');
-const { getRandomLyric } = require('../models/lyrics');
+const { getRandomLyric, getAllLyrics } = require('../models/lyrics');
+const Markov = require('../models/markov');
 
 module.exports.messageHandler = (dclient, msg) => {
   const mainSettings = settings.getSettings();
@@ -21,7 +22,16 @@ module.exports.messageHandler = (dclient, msg) => {
     .catch((err) => {
       console.log(err);
     });
+  } else if (trigger === "LYRIC_MARKOV") {
+    getAllLyrics()
+    .then((lyricsArray) => {
+      markovChain = new Markov(lyricsArray);
+      msg.reply(markovChain.getChain());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   } else if (trigger === "BANTER_SWORDS") {
     msg.reply("SWOOOOOOORDS");
-  }
+  } 
 };
