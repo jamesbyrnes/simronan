@@ -5,6 +5,7 @@ on:
       - master
 jobs:
   build:
+    runs-on: ubuntu-latest
     name: Authenticate and push to AWS ECR
     steps:
       - name: Configure AWS Credentials
