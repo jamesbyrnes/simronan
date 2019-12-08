@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Authenticate and push to AWS ECR
     steps:
+      - uses: actions/checkout@master
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -25,6 +26,9 @@ jobs:
           ECR_REPOSITORY: simronan
           IMAGE_TAG: ${{ github.sha }}
         run: |
+          ls .
+          pwd
+          ls ../
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
