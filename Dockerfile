@@ -1,13 +1,9 @@
-FROM node:8.16.0-alpine
+FROM node:dubnium-alpine
 
-RUN apk update && apk add git tree
-RUN npm install -g forever
-RUN mkdir /app
+COPY ./package.json /app/package.json
+WORKDIR /app
+RUN npm install -g forever && npm install
 
-COPY . /app/simronan
-
-RUN cd /app/simronan && npm install
-
-WORKDIR /app/simronan
+COPY . /app
 
 CMD ["forever", "bot.js"]
