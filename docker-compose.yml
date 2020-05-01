@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  simronan:
+    build: .
+    container_name: simronan
+    environment:
+      - DISCORD_TOKEN
+    volumes:
+      - .:/app
+      - /app/node_modules
