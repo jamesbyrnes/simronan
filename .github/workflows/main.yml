@@ -18,7 +18,7 @@ jobs:
          name: id_rsa # optional
          known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - run: |
-        git remote add server ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.SERVER_USER }}/apps/simronan.git
+        git remote add server ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}:/home/${{ secrets.SERVER_USER }}/apps/simronan
         git config --global user.email "xyzzy@zyzzyx.xyz"
         git config --global user.name "Xyzzy Zyzzyx"
         git checkout master
