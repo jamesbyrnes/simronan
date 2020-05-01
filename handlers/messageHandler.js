@@ -24,6 +24,6 @@ module.exports.messageHandler = (dclient, msg) => {
       console.log(err);
     });
   } else if (trigger.includes("swords")) {
-    msg.reply("SWOOOOOOORDS");
+    msg.reply("SWOOOOOOORDS!");
   } 
 };
